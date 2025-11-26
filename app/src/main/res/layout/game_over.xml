@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 최상위 레이아웃에 새로운 ID를 부여합니다. 예: "game_over_root" -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/game_over_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7E7A7E"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"> <!-- 반투명 검은색 배경 -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="게임 오버"
+        android:textColor="@android:color/white"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/game_over_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/usernameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="3"
+        android:textColor="@android:color/white"
+        android:textSize="34sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/regame_button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="#4A684D"
+            android:text="재시작"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4A684D"
+            android:text="랭킹 등록"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="랭 킹"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="50sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:text="이름"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="점수"
+                android:layout_marginHorizontal="15dp"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:text="생존"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/nameText0"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_weight="1"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/scoreText0"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-----"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/playTimeText0"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_weight="1"
+                android:text="--------"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/nameText1"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_weight="1"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/scoreText1"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-----"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/playTimeText1"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_weight="1"
+                android:text="--------"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/nameText2"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_weight="1"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/scoreText2"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-----"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/playTimeText2"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:text="--------"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/nameText3"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_weight="1"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/scoreText3"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-----"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/playTimeText3"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:text="--------"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/nameText4"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_weight="1"
+                android:text="---"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/scoreText4"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-----"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/playTimeText4"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:text="--------"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

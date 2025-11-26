@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- 게임 화면이 될 GameView가 여기에 프로그래매틱하게 추가됩니다. -->
+    <!-- FrameLayout의 첫 번째 자식으로 GameView가 들어갈 공간입니다. -->
+
+    <!-- HPBar, ExpBar를 포함하고 게임 오버시 숨깁니다. -->
+    <FrameLayout
+        android:id="@+id/hud_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:visibility="visible"> <!-- 이 FrameLayout의 visibility를 제어합니다. -->
+
+        <include layout="@layout/hud_layout" />
+    </FrameLayout>
+
+    <!-- 게임 오버 화면을 포함하고, 처음에는 숨깁니다. -->
+    <FrameLayout
+        android:id="@+id/game_over_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible"> <!-- 이 FrameLayout의 visibility를 제어합니다. -->
+
+        <include layout="@layout/game_over" />
+    </FrameLayout>
+
+    <!-- 레벨업 시 보여줄 업그레이드 화면을 포함하고, 처음에는 숨깁니다. -->
+    <FrameLayout
+        android:id="@+id/upgrade_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="gone"> <!-- 디자인 화면에서도 기본적으로는 숨김 처리 -->
+
+        <include layout="@layout/upgrade" />
+    </FrameLayout>
+
+</FrameLayout>
