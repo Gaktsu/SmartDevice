@@ -9,8 +9,6 @@ public class Bullet {
     boolean active = false;
     private int damage;
     private boolean pierce;
-
-    // 투사체 발사: 위치는 외부에서 설정, 방향과 속도만 지정
     public void Fire(float x, float y, float vx, float vy, int damage, boolean pierce) {
         this.x = x;
         this.y = y;
@@ -28,12 +26,10 @@ public class Bullet {
         x += vx;
         y += vy;
 
-        // 화면 밖으로 나가면 비활성화 (월드 크기 기준으로 변경)
         if (x < 0 || x > MainActivity.WORLD_WIDTH || y < 0 || y > MainActivity.WORLD_HEIGHT) {
             active = false;
         }
 
-        // 적 충돌 체크
         for (Enemy e : MainSingleton.enemy.getEnemies()) {
             if (!e.isAlive) continue;
 
@@ -41,19 +37,16 @@ public class Bullet {
             float dy = e.y - y;
             float dist = (float) Math.sqrt(dx * dx + dy * dy);
 
-            // 충돌 판정
             if (dist < e.radius) {
                 if(!pierce)
-                    active = false; // 총알 비활성화
+                    active = false;
 
-                // ★ 변경된 부분: Enemy의 attacked 메서드를 damage와 함께 호출
                 e.attacked(this.damage);
-                break; // 충돌했으므로 루프 종료
+                break;
             }
         }
     }
 
-    // 선분-원 교차 판정 함수
     private boolean segmentCircleIntersect(float x1, float y1, float x2, float y2, float cx, float cy, float r) {
         float dx = x2 - x1;
         float dy = y2 - y1;

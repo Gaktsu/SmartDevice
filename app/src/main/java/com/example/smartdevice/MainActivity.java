@@ -21,10 +21,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-
-    // 월드(맵) 크기 변수 추가
-    public static final int WORLD_WIDTH = 1080 * 3; // 화면 너비의 3배
-    public static final int WORLD_HEIGHT = 2400 * 3; // 화면 높이의 3배
+    public static final int WORLD_WIDTH = 1080 * 3;
+    public static final int WORLD_HEIGHT = 2400 * 3;
     private GameView gameView;
     View hpBar, expBar;
     TextView gameOverText;
@@ -46,20 +44,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         FrameLayout rootLayout = findViewById(android.R.id.content);
 
-        // GameView 추가
         gameView = new GameView(this);
         rootLayout.addView(gameView, 0);
 
-        // UI 관련 레이아웃 추가
         hudLayout = findViewById(R.id.hud_layout);
         hpBar = findViewById(R.id.hp_fill);
         expBar = findViewById(R.id.exp_fill);
 
-        // 게임 오버 관련 레이아웃 추가
         gameOverLayout = findViewById(R.id.game_over_layout);
         gameOverText = findViewById(R.id.game_over_text);
 
-        // 레벨업 레이아웃 추가
         upgradeLayout = findViewById(R.id.upgrade_layout);
         for(int i = 0; i < 3; i++){
             itemText[i] = findViewById(getResources().getIdentifier(itemTextIdx[i] + "Text", "id", getPackageName()));
@@ -77,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         gameoverButtons[0] = findViewById(R.id.regame_button);
         gameoverButtons[1] = findViewById(R.id.register_button);
-        // MainSingleton 초기화
+
         GameManager.GameManagerInitParam gameParam = new GameManager.GameManagerInitParam(hudLayout, gameOverLayout, upgradeLayout, gameOverText, hpBar, expBar, item, itemText, itemImg, nameText, names, scores, playtimes, gameoverButtons);
         EnemyManager.EnemyManagerInitParam enemyParam = new EnemyManager.EnemyManagerInitParam(WORLD_WIDTH, WORLD_HEIGHT);
         MainSingleton.Init(this, gameView, enemyParam, gameParam);

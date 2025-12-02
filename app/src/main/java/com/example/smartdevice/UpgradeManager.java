@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Random;
 
-// 업그레이드 옵션에 대한 정보를 담는 클래스
 class UpgradeOption {
     public enum UpgradeType {
         DAMAGE,
@@ -31,7 +30,7 @@ class UpgradeOption {
 
     UpgradeType itemType;
     String itemText;
-    int imageResId; // 이미지 리소스 ID (예: R.drawable.icon_sword)
+    int imageResId;
     boolean isMaxLevel = false;
     int maxLevel;
     int level = 0;
@@ -58,19 +57,15 @@ public class UpgradeManager {
         new UpgradeOption(UpgradeOption.UpgradeType.PIERCING, "관통 확률 증가", android.R.drawable.ic_menu_myplaces, 30)
     ));
 
-    // 레벨업 시 호출되어 3개의 랜덤 업그레이드 옵션을 화면에 표시하는 함수
     public void showUpgradeOptions() {
-        // TODO: 실제 업그레이드 목록에서 3개를 랜덤으로 선택하는 로직 구현
-        // 지금은 임시 데이터로 3개 슬롯을 채웁니다.
 
 
         UpgradeOption[] currentOptions = new UpgradeOption[3];
         boolean[] alreadySelected = new boolean[options.size()];
 
-        // 제약 추가 (최대치일시 더이상 나타나지 않도록 하기)
         for(int i = 0; i < options.size(); i++){
             if(options.get(i).level >= options.get(i).maxLevel)
-                alreadySelected[i] = true; // 최대 레벨로 선택 불가로 지정
+                alreadySelected[i] = true;
         }
 
         int currentIdx = 0;
@@ -84,7 +79,6 @@ public class UpgradeManager {
             currentIdx++;
         }
 
-        // GameManager를 통해 UIManager에게 업그레이드 창을 보여달라고 요청
         MainSingleton.game.ui.showUpgrade(currentOptions);
     }
 

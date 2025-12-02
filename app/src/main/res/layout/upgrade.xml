@@ -5,9 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#80000000"> <!-- 반투명 검은색 배경 -->
+    android:background="#80000000">
 
-    <!-- 이 LinearLayout이 3개의 자식을 가로(horizontal)로 나열합니다. -->
     <LinearLayout
         android:layout_gravity="center"
         android:layout_width="match_parent"
@@ -15,7 +14,6 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <!-- 첫 번째 칸 (너비는 0dp, 가중치는 1) -->
         <LinearLayout
             android:id="@+id/leftItem"
             android:layout_width="0dp"
@@ -25,7 +23,7 @@
             android:background="@color/black"
             android:orientation="vertical"
             android:clickable="true">
-            <!-- 이 안에 세 번째 업그레이드 아이템을 넣습니다. -->
+
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -52,7 +50,6 @@
                 android:text="방어력 200% 증가"/>
         </LinearLayout>
 
-        <!-- 두 번째 칸 (너비는 0dp, 가중치는 1) -->
         <LinearLayout
             android:id="@+id/centerItem"
             android:layout_width="0dp"
@@ -62,7 +59,7 @@
             android:background="@color/black"
             android:orientation="vertical"
             android:clickable="true">
-            <!-- 이 안에 세 번째 업그레이드 아이템을 넣습니다. -->
+
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -89,7 +86,7 @@
                 android:text="투사체 1개 증가"/>
         </LinearLayout>
 
-        <!-- 세 번째 칸 (너비는 0dp, 가중치는 1) -->
+
         <LinearLayout
             android:id="@+id/rightItem"
             android:layout_width="0dp"
@@ -99,7 +96,7 @@
             android:background="@color/black"
             android:orientation="vertical"
             android:clickable="true">
-            <!-- 이 안에 세 번째 업그레이드 아이템을 넣습니다. -->
+
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
